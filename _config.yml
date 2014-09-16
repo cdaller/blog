@@ -37,11 +37,11 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: dallermassl.at
-    url: http://www.dallermassl.at
-    external: false
+#  - title: Theme Setup
+#    url: /theme-setup
+#  - title: dallermassl.at
+#    url: http://www.dallermassl.at
+#    external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Vienna
