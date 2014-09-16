@@ -36,7 +36,7 @@ Disable the infinite DNS caching in the JVM
 ## Second Problem
 
 Now the dynamic resolving works, but the new ip address is further investigated by the
-security manager (java.net.SocketPermission#ipliesIgnoreMask):
+security manager (java.net.SocketPermission#impliesIgnoreMask):
 a reverse lookup is done for the new ip address and the returned hostname
 is checked if it is allowed. As the reverse lookuped hostname is a virtual server in the cloud
 (e.g. ec2-abc-def-ghi-jkl.eu-west-1.compute.amazonaws.com) the security manager refuses the
