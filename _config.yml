@@ -1,13 +1,73 @@
-# Site settings
-title: Christof's Blog
-email: christof [at] dallermassl [dot] at
-description: > # this means to ignore newlines until "baseurl:"
-  Various things that I find out or that I did not find out :-)
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://cdaller.github.io" # the base hostname & protocol for your site
-twitter_username: cdaller
-github_username:  cdaller
+title:            Techblog
+description:      Some interesting things about technology, java, security, ...
+disqus_shortname:
+reading_time:     false
+words_per_minute: 200
+#Your site's domain goes here. Leave localhost server or blank when working locally.
+#url:              http://cdaller.github.io
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+# Owner/author information
+owner:
+  name:           Christof Dallermassl
+  avatar:         Dallermassl_Christof.jpg
+  bio:            "I am working as a software architect and as a security advisor and I am having fun with all kinds of programming, sailing and lots more."
+  email:          christof [at] dallermassl [dot] at
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        cdaller
+  facebook:
+  github:         cdaller
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:    +cdaller
+
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Theme Setup
+    url: /theme-setup
+  - title: External Link
+    url: http://mademistakes.com
+    external: true
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Europe/Vienna
+future:      true
+highlighter: pygments
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

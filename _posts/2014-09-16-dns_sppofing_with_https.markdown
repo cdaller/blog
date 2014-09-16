@@ -1,15 +1,21 @@
 ---
 layout: post
-title:  "DNS Spoofing with HTTPS"
+title:  "DNS Spoofing with HTTPS and real Verisign Certificate"
 date:   2014-09-16 10:16:15
 categories: security
+tags: [security, java]
+image:
+  feature: abstract-12.jpg
+  credit: dargadgetz
+  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+comments: true
+share: true
 ---
-# DNS Spoofing with real Verisign CA Certificate
 
 ## Scenario:
 
-Application uses a webservice of a server that is hosted in the cloud and uses multiple
-servers for failover.
+(Web)Application uses a webservice of a server that is hosted in the cloud and uses multiple
+servers for failover or loadbalancing.
 
 Application is secured by Java Security Manager.
 
@@ -22,6 +28,7 @@ new dns entry to the failover server is never resolved to the new ip adress.
 ## Solution to first problem:
 
 Disable the infinite DNS caching in the JVM
+
 ```
 -Dsun.net.inetaddr.ttl=30
 ```
@@ -39,7 +46,12 @@ connection as there is no explicit rule for this host).
 
 Add all possible hostnames from the failover system to the security manager's policy file.
 The hostname is as relyable as the ip address and might change in near future. So there is only one
-solution: add "*.eu-west-1.compute.amazonaws.com" to the allowed policy.
+solution: add the lines to the security policy file (e.g. catalina.policy)
+
+~~~
+permission java.net.SocketPermission "*.eu-west-1.compute.amazonaws.com", "resolve";
+permission java.net.SocketPermission "*.eu-west-1.compute.amazonaws.com:443", "connect";
+~~~
 
 ## Third problem:
 
