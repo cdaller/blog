@@ -1,0 +1,13 @@
+# Site settings
+title: Christof's Blog
+email: christof [at] dallermassl [dot] at
+description: > # this means to ignore newlines until "baseurl:"
+  Various things that I find out or that I did not find out :-)
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
+url: "http://cdaller.github.io" # the base hostname & protocol for your site
+twitter_username: cdaller
+github_username:  cdaller
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
