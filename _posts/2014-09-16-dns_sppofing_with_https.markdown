@@ -101,6 +101,6 @@ following exception:
 
 ~~~
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: 
-  java.security.cert.CertificateException: No name matching uny-dev-murauer.unycom.com found
+  java.security.cert.CertificateException: No name matching xxxx.yyyy.com found
 ~~~
 
