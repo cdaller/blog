@@ -83,7 +83,7 @@ Lots of security mechanisms in place (certificate, tls, security manager) but du
 problems the complete system is quite easily compromisable!
 
 The real world problems are
-* multiple servers as failovers are relocated into the cloud. This leads to
+* multiple servers as failovers are relocated into the cloud.
   Anybody is able to rent a system
   in that cloud and is able to buy a "trusted" certificate for it. This would not be possible if the
   failover systems are located inside the webserver's domain (no trusted certificate available for
@@ -91,3 +91,15 @@ The real world problems are
 * the server's certificate changes too often, so the CA's certificate is used for trust checks.
   But even if the server's certificate is added to the truststore this will not help if
   a certificate of a CA that sells certificates for other systems are also contained in the truststore.
+
+## Update 2014-09-24
+
+The above scenario is NOT a problem due to a security mechanism in java: the HttpsURLConnection's 
+HostNameVerifier is asked to verify the hostname if the certifiates hostname and the requested hostname 
+do not match. The ```DefaultHostNameVerifier``` always returns ```false``` and a connection attempt fails with the 
+following exception:
+
+~~~
+Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching uny-dev-murauer.unycom.com found
+~~~
+
