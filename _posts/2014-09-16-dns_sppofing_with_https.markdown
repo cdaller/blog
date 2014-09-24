@@ -100,6 +100,7 @@ do not match. The ```DefaultHostNameVerifier``` always returns ```false``` and a
 following exception:
 
 ~~~
-Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching uny-dev-murauer.unycom.com found
+Exception in thread "main" javax.net.ssl.SSLHandshakeException: 
+  java.security.cert.CertificateException: No name matching uny-dev-murauer.unycom.com found
 ~~~
 
